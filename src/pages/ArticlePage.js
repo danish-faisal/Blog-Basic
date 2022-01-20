@@ -1,12 +1,15 @@
 import { useParams } from "react-router";
+import ArticlesList from "../components/ArticlesList";
 import articles from "./article-content";
 
-const ArticlePage = ({ match }) => {
+const ArticlePage = () => {
     const { name } = useParams();
 
     const article = articles.find(article => article.name === name);
 
     if (!article) return <h1>Article does not exist!</h1>;
+
+    const otherArticles = articles.filter(article => article.name !== name);
 
     return (
         <>
@@ -17,6 +20,8 @@ const ArticlePage = ({ match }) => {
                 );
             })
             }
+            <h3>Other Articles:</h3>
+            <ArticlesList articles={otherArticles} />
         </>
     );
 }

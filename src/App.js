@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './NavBar';
 import AboutPage from './pages/AboutPage';
 import ArticlePage from './pages/ArticlePage';
-import ArticlesList from './pages/ArticlesList';
+import ArticlesListPage from './pages/ArticlesListPage';
 import HomePage from './pages/HomePage';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/articles-list" element={<ArticlesList />} />
+          <Route path="/articles-list" element={<ArticlesListPage />} />
           <Route path="/article/:name" element={<ArticlePage />} />
         </Routes>
       </div>

@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import articles from "./article-content";
 
-const ArticlesList = () => {
+const ArticlesList = ({ articles }) => {
     return (
         <>
-            <h1>Articles List</h1>
             {
                 articles.map((article, idx) => {
                     return (
@@ -16,7 +14,7 @@ const ArticlesList = () => {
                 })
             }
         </>
-    );
+    )
 }
 
 export default ArticlesList;
