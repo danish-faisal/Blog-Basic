@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import AddCommentForm from "../components/AddCommentForm";
 import ArticlesList from "../components/ArticlesList";
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from "../components/UpvotesSection";
@@ -38,6 +39,7 @@ const ArticlePage = () => {
             }
             <h3>Comments:</h3>
             <CommentsList comments={articleInfo.comments} />
+            <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
             <h3>Other Articles:</h3>
             <ArticlesList articles={otherArticles} />
         </>
