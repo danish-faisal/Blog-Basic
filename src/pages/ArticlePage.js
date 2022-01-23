@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ArticlesList from "../components/ArticlesList";
+import CommentsList from "../components/CommentsList";
 import articles from "./article-content";
 import NotFoundPage from "./NotFoundPage";
 
@@ -12,7 +13,6 @@ const ArticlePage = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
 
     useEffect(() => {
-        setArticleInfo({ upvotes: Math.ceil(Math.random() * 10) });
         const fetchData = async () => {
             const result = await fetch(`/api/articles/${name}`);
             const body = await result.json();
@@ -35,6 +35,8 @@ const ArticlePage = () => {
                 );
             })
             }
+            <h3>Comments:</h3>
+            <CommentsList comments={articleInfo.comments} />
             <h3>Other Articles:</h3>
             <ArticlesList articles={otherArticles} />
         </>
